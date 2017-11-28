@@ -13773,9 +13773,9 @@ qFwAAAAASUVORK5CYII=
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
 <ul>
-<li><p>When maximum depth = 1, the model suffers from high bias, evident from the low scores of both curves</p>
+<li><p>When maximum depth = 1, the model suffers from high bias, evident from the low scores of both curves.</p>
 </li>
-<li><p>When maximum depth = 10, the model suffers from high variance, evident from the large gap between the training curve and the validaton curve</p>
+<li><p>When maximum depth = 10, the model suffers from high variance, evident from the large gap between the training curve and the validaton curve. The high variance problem can also be told from the fact that the training set has a R^2 value near 1, whereas that of the testing set is as low as 0.7.</p>
 </li>
 </ul>
 
@@ -13799,7 +13799,7 @@ qFwAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Maximum depth = 3 is the best-guess optimal model. When maximum depth = 3, the bias is kept pretty low while the variance is also kept as one of the lowest. Maximum depth = 4 seems to be a competitor, owing to <strong><em>Occams Razor</em></strong>, I will still choose maximum depth = 3.</p>
+<p><strong>Answer: </strong> Maximum depth = 4 is the best-guess optimal model. As we are looking for the least complex model that maximises the testing R^2, max_depth = 4 has a slight advantage over max_depth = 3 as it has a slightly higher testing R^2 (Also training R^2 is increased a lot). Further increasing maximum depth does not make the testing R^2 higher.</p>
 
 </div>
 </div>
@@ -13856,7 +13856,7 @@ qFwAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> In a k-fold cross-validatation training procedure, the dataset is divided into k equal-size portions (shuttling can also be performed before dividing). Then the learning algorithm is trained repeatedly and continuously for k times, each time using k-1 sets as the training set and the remaining one as the testing set.</p>
+<p><strong>Answer: </strong> In a k-fold cross-validation training procedure, the dataset is divided into k equal-size portions (shuttling can also be performed before dividing). Then the learning algorithm is trained repeatedly and continuously for k times, each time using k-1 sets as the training set and the remaining one as the testing set. For each time the cross-validation is conducted, a validation accuracy score can be obtained. Eventually, we will take the average of these 10 scores as the accuracy score of the model, namely the evaluation metrics to determine if the model works for the data sets.</p>
 <p>While obeying <strong><em>the Golden Rule of not using the testing set til the very end</em></strong>, k-fold CV helps to reduce the risk of overfitting while choosing the setting/hyperparameters for the learning algorithm. It provides an evaluation metrics for grid search while not reducing the size of training and testing sets.</p>
 
 </div>
